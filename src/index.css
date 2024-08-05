@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+.container{
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+}
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+.swiper-button-next{
+    margin-left: 20% !important;
+    width: 10px !important;
+    height: 10px !important;
+}
+.swiper-button-prev{
+    width: 10px !important;
+    height: 10px !important;
+}
+.main{
+    background-image: url('./assets/imgs//nashi.png');
+    background-size: cover;
+    background-position: center;
+
+}

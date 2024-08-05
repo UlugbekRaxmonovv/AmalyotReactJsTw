@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.als{
+    text-decoration: line-through;
+    transform: rotate(15deg);
+}
