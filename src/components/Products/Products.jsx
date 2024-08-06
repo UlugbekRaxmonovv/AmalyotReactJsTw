@@ -30,7 +30,7 @@ const Products = () => {
                                 alt={`Product ${index + 1}`} 
                             />
                             <div className="absolute inset-0 top-[80%] flex items-center justify-center">
-                                <p className="text-2xl font-semibold text-white bg-opacity-50 px-4 py-2 rounded-lg">
+                                <p className=" text-2xl  font-semibold text-white bg-opacity-50 px-4 py-2 rounded-lg sm:hidden lg:flex">
                                     {product.label}
                                 </p>
                             </div>

@@ -7,10 +7,12 @@ import Footer from '../../components/Footer/Footer';
 import Pochimu from '../../components/Pochimu/Pochimu';
 import Onas from '../../components/Onas/Onas';
 import Mian from '../../components/Main/Mian';
+import ProductTop from '../../components/ProductTop/index'
 
 const Home = () => {
     return (
         <>
+        <ProductTop/>
         <div className="home">
             <Navbar />
             <div className="container mx-auto  ">
@@ -22,7 +24,7 @@ const Home = () => {
                             <div className="text-slate-200 text-lg md:text-xl">Цена</div>
                             <div className="text-white text-lg md:text-xl">4 906 грн</div>
                         </div>
-                        <div className="py-2 text-white w-full md:w-[180px] text-center bg-gradient-to-r from-cyan-500 to-blue-500 rounded my-4">
+                        <div className="py-2 text-white w-full md:w-[180px] text-center bg-orange-700 rounded my-4">
                             <button className="w-full">Купить</button>
                         </div>
                     </div>

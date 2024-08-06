@@ -24,7 +24,7 @@ const Onas = () => {
         modules={[Pagination, Navigation, HashNavigation]}
         className="mySwiper"
       >
-        <SwiperSlide data-hash="slide1"><div className="flex flex-wrap gap-[15px]   justify-between items-center p-[40px] ">
+        <SwiperSlide data-hash="slide1"><div className="flex flex-wrap gap-[15px]   justify-between items-center p-[10px] ">
                 <div className="w-[380px]  shadow-xl ">
                     <div className="p-[30px] font-semibold ">
                        <img src={rasm} alt="" />
@@ -53,7 +53,7 @@ const Onas = () => {
                     </div>
                 </div>
             </div></SwiperSlide>
-            <SwiperSlide data-hash="slide1"><div className="flex flex-wrap gap-[15px]   justify-between items-center p-[40px] ">
+            <SwiperSlide data-hash="slide1"><div className="flex flex-wrap gap-[15px]   justify-between items-center p-[10px] ">
                 <div className="w-[380px]  shadow-xl ">
                     <div className="p-[30px] font-semibold ">
                        <img src={rasm} alt="" />
@@ -84,7 +84,7 @@ const Onas = () => {
             </div></SwiperSlide>
           
 
-            <SwiperSlide data-hash="slide1"><div className="flex flex-wrap gap-[15px]   justify-between items-center p-[40px] ">
+            <SwiperSlide data-hash="slide1"><div className="flex flex-wrap gap-[15px]   justify-between items-center p-[10px] ">
                 <div className="w-[380px]  shadow-xl ">
                     <div className="p-[30px] font-semibold ">
                        <img src={rasm} alt="" />

@@ -4,17 +4,19 @@ import Footer from '../../components/Footer/Footer';
 import { VscItalic } from 'react-icons/vsc';
 import { Link } from 'react-router-dom';
 import { FaRegHeart } from "react-icons/fa";
-import { IoSearchOutline } from "react-icons/io5";
+import { IoCart, IoCartOutline, IoSearchOutline } from "react-icons/io5";
 import { useGetProductsQuery, useGetCategoryQuery } from '../../components/context/api/productApi';
 import rasm from '../../assets/imgs/kata.png';
 import rasm1 from '../../assets/imgs/kata1.png';
 import rasm2 from '../../assets/imgs/kata2.png';
 import rasm3 from '../../assets/imgs/kata3.png';
-
+import { useDispatch, useSelector } from 'react-redux';
+import { addToCart } from '../../components/context/cartSlice';
 const Katalog = () => {
     const { data: products } = useGetProductsQuery();
     const { data: categories } = useGetCategoryQuery();
-
+    const cart = useSelector(state => state.cart.value);
+    const dispatch = useDispatch();
     const [search, setSearch] = useState("");
     const [selectedCategory, setSelectedCategory] = useState("All");
 
@@ -38,19 +40,19 @@ const Katalog = () => {
                 <div className="py-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 z-[-1]">
                 <div  className="relative">
                             <img src={rasm1} alt="Category" className='w-[300px] h-[200px] object-cover' />
-                            <p className='absolute bottom-4  w-[200px] top-[120px] left-[50%]  transform -translate-x-1/2 text-white text-lg'>Для эфирных масел </p>
+                            <p className='absolute bottom-4  w-[200px] top-[120px] left-[50%]  transform -translate-x-1/2 text-white text-lg sm:text-[15px] sm:left-[70%] md:text-lg md:left-[50%]' >Для эфирных масел </p>
                         </div>
                         <div  className="relative">
                             <img src={rasm3} alt="Category" className='w-[300px] h-[200px] object-cover' />
-                            <p className='absolute bottom-4  w-[200px] top-[120px] left-[50%]  transform -translate-x-1/2 text-white text-lg'>Для эфирных масел </p>
+                            <p className='absolute bottom-4  w-[200px] top-[120px] left-[50%]  transform -translate-x-1/2 text-white text-lg sm:text-[15px] sm:left-[70%] md:text-lg md:left-[50%]'>Для эфирных масел </p>
                         </div>
                         <div  className="relative">
                             <img src={rasm1} alt="Category" className='w-[300px] h-[200px] object-cover' />
-                            <p className='absolute bottom-4  top-[120px] left-[50%]  transform -translate-x-1/2 text-white text-lg'>Медная посуда </p>
+                            <p className='absolute bottom-4  top-[120px] left-[50%]  transform -translate-x-1/2 text-white text-lg sm:text-[15px] sm:left-[70%] md:text-lg md:left-[50%]'>Медная посуда </p>
                         </div>
                         <div  className="relative">
                             <img src={rasm2} alt="Category" className='w-[300px] h-[200px] object-cover' />
-                            <p className='absolute bottom-4 top-[120px] left-[50%] transform -translate-x-1/2 text-white text-lg'>Аксессуары из меди </p>
+                            <p className='absolute bottom-4 top-[120px] left-[50%] transform -translate-x-1/2 text-white text-lg sm:text-[15px] whitespace-nowrap sm:left-[50%]  md:text-lg md:left-[50%]'>Аксессуары из меди </p>
                         </div>
                 </div>
                 <div className="py-10 flex flex-col md:flex-row justify-between items-center gap-4">
@@ -84,6 +86,15 @@ onChange={(e) => setSelectedCategory(e.target.value)}>
               <img src={product.imges[2]} alt={product.title} className="w-full h-64 object-cover" />
               <div className="absolute top-2 right-2 w-10 h-10 bg-white rounded-full flex justify-center items-center shadow-md">
                 <FaRegHeart className="text-xl text-gray-700 cursor-pointer" />
+              </div>
+              <div className="absolute top-[85%] right-2 w-10 h-10 bg-white rounded-full flex justify-center items-center shadow-md">
+              {
+                    cart?.some((cart) => cart.id === product.id) ? 
+                    <IoCart className="text-xl text-gray-700 cursor-pointer"  onClick={() =>dispatch(addToCart(product))}/>
+                    :
+                    <IoCartOutline  className="text-xl text-gray-700 cursor-pointer" onClick={() =>dispatch(addToCart(product))}/>
+
+                }
               </div>
               <div className="p-6">
                 <Link to={`/wishlist/${product.id}`}>
