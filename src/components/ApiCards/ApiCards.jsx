@@ -18,7 +18,7 @@ const ApiCards = () => {
         <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 gap-8">
           {products?.slice(0, 3).map(product => (
             <div key={product.id} className="bg-white shadow-2xl rounded-lg overflow-hidden relative">
-              <img src={product.imges[2]} alt={product.title} className="w-full h-64 object-cover" />
+              <img src={product.imges[3]} alt={product.title} className="w-full h-64 object-cover" />
               <div className="absolute top-2 right-2 w-10 h-10 bg-white rounded-full flex justify-center items-center shadow-md">
               <span onClick={() => dispatch(toggleHeart(product))}>
             {
