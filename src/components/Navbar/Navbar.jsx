@@ -27,7 +27,9 @@ const Navbar = () => {
                         <ul className={`flex-col md:flex-row md:flex items-center gap-6 lg:gap-12  ${isMenuOpen ? 'flex justify-center absolute   top-[0px] h-[100vh]  bg-accent w-full items-center text-center z-50 ' : 'hidden'}`}>
                         <div className="flex items-center gap-3 md:hidden">
                                 <div className="py-2 px-2 bg-white rounded cursor-pointer hover:bg-gray-200">
+                                <Link to={'/wishlistall'}>
                                     <FaRegHeart />
+                                    <Link/>
                                 </div>
                                 <div className="py-2 px-2 bg-white rounded cursor-pointer hover:bg-gray-200">
                                     <Link to={'/korzinka'}>
@@ -103,7 +105,7 @@ const Navbar = () => {
                         </ul>
                         <div className="flex relative items-center gap-3 md:flex hidden">
                             <div className="py-2 px-2 bg-white rounded cursor-pointer hover:bg-gray-200">
-                                <Link to={'/wishlistall'}>
+                            <Link to={'/wishlistall'}>
                                 <FaRegHeart />
                                 </Link>
                                
